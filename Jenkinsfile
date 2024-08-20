@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t shivambhamare/sample1.1 .'
+                sh 'docker build -t shivambhamare/sample:sample1.1 .'
             }
         }
         stage('push docker image'){

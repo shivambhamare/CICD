@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t shivambhamare/sample:v0.1.$BUILD_ID .'
+                sh 'docker build -t shivambhamare/sample:1.$BUILD_ID .'
             }
         }
         stage('push docker image'){
@@ -17,7 +17,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
                     sh 'docker login -u shivambhamare -p ${dockerhubpwd}'
 }
-                    sh 'docker push shivambhamare/sample:v0.1.$BUILD_ID '
+                    sh 'docker push shivambhamare/sample:1.$BUILD_ID '
                 }
             }
         }
